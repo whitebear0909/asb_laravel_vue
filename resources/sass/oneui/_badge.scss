@@ -1,0 +1,11 @@
+//
+// Badge
+// --------------------------------------------------
+
+.badge-secondary {
+    @include badge-variant(rgba($black, 0.33));
+}
+
+.badge {
+    padding: 5px 5px 3px;
+}

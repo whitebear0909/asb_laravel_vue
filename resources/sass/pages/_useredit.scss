@@ -1,0 +1,16 @@
+.useredit-content {
+  background-color: white;
+  border-radius: 10px;
+  .back-btn{
+    line-height: 35px;
+    i {
+      color: black;
+    }
+  }
+
+  .back-btn:hover {
+    i {
+      color: #4C5BED;
+    }
+  }
+}

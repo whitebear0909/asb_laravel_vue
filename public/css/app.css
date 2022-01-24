@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+#sidebar .content-header {
+  height: 8rem;
+}
+#sidebar .content-header .logo-link p {
+  font-size: 12px;
+  color: black;
+}
+
+.bg-login {
+  background-image: url("/images/login-bg.png");
+}
+.bg-login .login-blur {
+  border-radius: 10px;
+}
+.bg-login .login-blur .welcome-text {
+  font-weight: bold;
+}
+.bg-login .login-blur .title-text {
+  font-size: 12px;
+}
+.bg-login .login-blur .login-form-area .form-group .input-radius {
+  border-radius: 10px;
+}
+.bg-login .login-blur .login-form-area .form-group label {
+  font-size: 14px;
+  font-weight: bold;
+}
+.bg-login .login-blur .login-form-area .form-group .login-btn {
+  width: 100%;
+  background-color: #1320A1;
+  border-radius: 10px;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .login-blur {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+.user-item .block-content {
+  padding: 0px;
+  margin-top: -40px;
+}
+.user-item .card-title {
+  color: black;
+}
+.user-item .card-qualification {
+  color: #4C5BED;
+}
+.user-item .card-email {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: black;
+}
+.user-item .drop-button {
+  color: black !important;
+}
+
+.useredit-content {
+  background-color: white;
+  border-radius: 10px;
+}
+.useredit-content .back-btn {
+  line-height: 35px;
+}
+.useredit-content .back-btn i {
+  color: black;
+}
+.useredit-content .back-btn:hover i {
+  color: #4C5BED;
+}
