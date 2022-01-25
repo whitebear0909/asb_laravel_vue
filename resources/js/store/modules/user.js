@@ -53,15 +53,22 @@ export const mutations = {
     [types.SAVE_USER_FAIL](state, {}) {
         state.user.isLoading = false;
     },
+    //DELETE USER
+    [types.DELETE_USER_REQUEST](state, {}) {},
+    [types.DELETE_USER_SUCCESS](state, {}) {},
+    [types.DELETE_USER_FAIL](state, {}) {},
 };
 
 // actions
 export const actions = {
     async getUsers({ commit }, payload) {
         try {
+            const params = new URLSearchParams();
+            params.append("sch_str", payload);
             commit(types.GET_USERS_REQUEST, {});
-            const { data } = await axios.get("/users", payload);
-            console.log(data);
+            const { data } = await axios.get("/users", {
+                params: params,
+            });
             commit(types.GET_USERS_SUCCESS, { data: data });
         } catch (e) {
             commit(types.GET_USERS_FAIL);
@@ -80,17 +87,27 @@ export const actions = {
     async saveUser({ commit }, payload) {
         try {
             commit(types.GET_USER_REQUEST, {});
-            if(payload.id){
-                console.log('req', payload.data);
-                const { data } = await axios.post(`/users/${payload.id}`, payload.data);
+            if (payload.id) {
+                const { data } = await axios.post(
+                    `/users/${payload.id}`,
+                    payload.data
+                );
                 commit(types.SAVE_USER_SUCCESS, { data: data });
-            } 
-            else {
-                
+            } else {
+                const { data } = await axios.post(`/users`, payload.data);
+                commit(types.SAVE_USER_SUCCESS, { data: data });
             }
-            
         } catch (e) {
             commit(types.SAVE_USER_FAIL);
+        }
+    },
+    async deleteUser({ commit }, payload) {
+        try {
+            commit(types.DELETE_USER_REQUEST, {});
+            await axios.delete(`/users/${payload.id}`);
+            commit(types.DELETE_USER_SUCCESS, {});
+        } catch (e) {
+            commit(types.DELETE_USER_FAIL);
         }
     },
 };

@@ -13535,7 +13535,6 @@ a.badge-secondary:focus, a.badge-secondary.focus {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  overflow-y: auto;
   -webkit-transform: translateX(-100%) translateY(0) translateZ(0);
           transform: translateX(-100%) translateY(0) translateZ(0);
   -webkit-overflow-scrolling: touch;
@@ -38365,9 +38364,67 @@ input[type=color].form-control:disabled {
 #sidebar .content-header {
   height: 8rem;
 }
-#sidebar .content-header .logo-link p {
-  font-size: 12px;
+#sidebar .content-header .logo-link .sidebar-logo-img {
+  width: 150px;
+}
+#sidebar .nav-main-item .active {
+  border-right: 4px solid #4C5BED;
+  color: #4C5BED;
+}
+#sidebar .nav-main-item .active i {
+  color: #4C5BED;
+}
+#sidebar .profile-bar {
+  padding: 20px;
+}
+#sidebar .profile-bar .imagePreviewWrapper {
+  width: 100px;
+  height: 100px;
+  display: block;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center center;
+  background-color: #d8d8d8;
+  border-radius: 10px;
+}
+#sidebar .profile-bar .side-profile-name {
+  font-size: 16px;
+  font-weight: bold;
   color: black;
+}
+#sidebar .profile-bar .side-profile-qualification {
+  font-size: 14px;
+  color: #8F8F8F;
+}
+#sidebar .contact-bar {
+  position: absolute;
+  bottom: 20px;
+  padding: 10px 20px;
+}
+#sidebar .contact-bar .contact-email {
+  color: #8F8F8F;
+  font-size: 14px;
+}
+#sidebar .contact-bar .contact-email i {
+  color: #4C5BED;
+}
+#sidebar .contact-bar .contact-info {
+  font-size: 10px;
+  color: black;
+}
+
+.useredit-content {
+  background-color: white;
+  border-radius: 10px;
+}
+.useredit-content .back-btn {
+  line-height: 35px;
+}
+.useredit-content .back-btn i {
+  color: black;
+}
+.useredit-content .back-btn:hover i {
+  color: #4C5BED;
 }
 
 .bg-login {
@@ -38375,6 +38432,9 @@ input[type=color].form-control:disabled {
 }
 .bg-login .login-blur {
   border-radius: 10px;
+}
+.bg-login .login-blur .logo-area .logo-img {
+  width: 250px;
 }
 .bg-login .login-blur .welcome-text {
   font-weight: bold;
@@ -38402,36 +38462,38 @@ input[type=color].form-control:disabled {
     background-color: rgba(255, 255, 255, 0.2);
   }
 }
-.user-item .block-content {
-  padding: 0px;
-  margin-top: -40px;
+.user-item-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px 20px;
 }
-.user-item .card-title {
-  color: black;
+.user-item-card .setting-drop {
+  position: absolute;
+  right: 25px;
+  top: 15px;
 }
-.user-item .card-qualification {
+.user-item-card .setting-drop button {
+  border: none;
+}
+.user-item-card .card-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #202020;
+  font-size: 18px;
+  font-weight: bold;
+}
+.user-item-card .card-qualification {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   color: #4C5BED;
+  font-size: 14px;
 }
-.user-item .card-email {
+.user-item-card .card-email {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   color: black;
-}
-.user-item .drop-button {
-  color: black !important;
-}
-
-.useredit-content {
-  background-color: white;
-  border-radius: 10px;
-}
-.useredit-content .back-btn {
-  line-height: 35px;
-}
-.useredit-content .back-btn i {
-  color: black;
-}
-.useredit-content .back-btn:hover i {
-  color: #4C5BED;
+  text-align: left;
 }

@@ -22,7 +22,7 @@ export default {
         {
             name: "Benutzerverwaltung",
             to: "/users",
-            icon: "si si-speedometer",
+            icon: "si si-user",
         },
         // {
         //     name: "Page Packs",

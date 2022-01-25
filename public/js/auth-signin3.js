@@ -371,6 +371,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // Vuelidate, for more info and examples you can check out https://github.com/vuelidate/vuelidate
 
 
@@ -379,7 +401,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        username: null,
+        first_name: null,
+        second_name: null,
         email: null,
         password: null,
         password_confirmation: null,
@@ -389,7 +412,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   validations: {
     form: {
-      username: {
+      first_name: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__.required,
+        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__.minLength)(3)
+      },
+      second_name: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__.required,
         minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__.minLength)(3)
       },
@@ -416,7 +443,6 @@ __webpack_require__.r(__webpack_exports__);
     onSubmit: function onSubmit() {
       var _this = this;
 
-      console.log("submit");
       this.$v.form.$touch();
 
       if (this.$v.form.$anyError) {
@@ -424,11 +450,8 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.$store.dispatch("auth/register", this.form).then(function (res) {
-        console.log(res);
-
         _this.$router.push("/login");
-      }); // Form submit logic
-      // this.$router.push('/backend/pages/auth/all')
+      });
     }
   }
 });
@@ -811,30 +834,72 @@ var render = function () {
                         _c("div", { staticClass: "py-3" }, [
                           _c(
                             "div",
-                            { staticClass: "form-group" },
+                            { staticClass: "form-group d-flex" },
                             [
-                              _c("b-form-input", {
-                                staticClass: "form-control-alt",
-                                attrs: {
-                                  size: "lg",
-                                  id: "username",
-                                  name: "username",
-                                  placeholder: "Username",
-                                  state: !_vm.$v.form.username.$error && null,
-                                  "aria-describedby": "username-feedback",
-                                },
-                                model: {
-                                  value: _vm.$v.form.username.$model,
-                                  callback: function ($$v) {
-                                    _vm.$set(
-                                      _vm.$v.form.username,
-                                      "$model",
-                                      $$v
-                                    )
-                                  },
-                                  expression: "$v.form.username.$model",
-                                },
-                              }),
+                              _c(
+                                "b-col",
+                                { staticClass: "pl-0", attrs: { cols: "6" } },
+                                [
+                                  _c("b-form-input", {
+                                    staticClass: "form-control-alt",
+                                    attrs: {
+                                      size: "lg",
+                                      id: "first_name",
+                                      name: "first_name",
+                                      placeholder: "first name",
+                                      state:
+                                        !_vm.$v.form.first_name.$error && null,
+                                      "aria-describedby": "first_name-feedback",
+                                    },
+                                    model: {
+                                      value: _vm.$v.form.first_name.$model,
+                                      callback: function ($$v) {
+                                        _vm.$set(
+                                          _vm.$v.form.first_name,
+                                          "$model",
+                                          $$v
+                                        )
+                                      },
+                                      expression:
+                                        "\n                                                $v.form.first_name.$model\n                                            ",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-col",
+                                { staticClass: "pr-0", attrs: { cols: "6" } },
+                                [
+                                  _c("b-form-input", {
+                                    staticClass: "form-control-alt",
+                                    attrs: {
+                                      size: "lg",
+                                      id: "second_name",
+                                      name: "second_name",
+                                      placeholder: "second name",
+                                      state:
+                                        !_vm.$v.form.second_name.$error && null,
+                                      "aria-describedby":
+                                        "second_name-feedback",
+                                    },
+                                    model: {
+                                      value: _vm.$v.form.second_name.$model,
+                                      callback: function ($$v) {
+                                        _vm.$set(
+                                          _vm.$v.form.second_name,
+                                          "$model",
+                                          $$v
+                                        )
+                                      },
+                                      expression:
+                                        "\n                                                $v.form.second_name.$model\n                                            ",
+                                    },
+                                  }),
+                                ],
+                                1
+                              ),
                             ],
                             1
                           ),

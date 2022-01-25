@@ -24,19 +24,41 @@
                             <!-- Sign Up Form -->
                             <b-form @submit.stop.prevent="onSubmit">
                                 <div class="py-3">
-                                    <div class="form-group">
-                                        <b-form-input
-                                            size="lg"
-                                            class="form-control-alt"
-                                            id="username"
-                                            name="username"
-                                            placeholder="Username"
-                                            v-model="$v.form.username.$model"
-                                            :state="
-                                                !$v.form.username.$error && null
-                                            "
-                                            aria-describedby="username-feedback"
-                                        ></b-form-input>
+                                    <div class="form-group d-flex">
+                                        <b-col class="pl-0" cols="6">
+                                            <b-form-input
+                                                size="lg"
+                                                class="form-control-alt"
+                                                id="first_name"
+                                                name="first_name"
+                                                placeholder="first name"
+                                                v-model="
+                                                    $v.form.first_name.$model
+                                                "
+                                                :state="
+                                                    !$v.form.first_name
+                                                        .$error && null
+                                                "
+                                                aria-describedby="first_name-feedback"
+                                            ></b-form-input>
+                                        </b-col>
+                                        <b-col class="pr-0" cols="6">
+                                            <b-form-input
+                                                size="lg"
+                                                class="form-control-alt"
+                                                id="second_name"
+                                                name="second_name"
+                                                placeholder="second name"
+                                                v-model="
+                                                    $v.form.second_name.$model
+                                                "
+                                                :state="
+                                                    !$v.form.second_name
+                                                        .$error && null
+                                                "
+                                                aria-describedby="second_name-feedback"
+                                            ></b-form-input>
+                                        </b-col>
                                     </div>
                                     <div class="form-group">
                                         <b-form-input
@@ -369,7 +391,8 @@ export default {
     data() {
         return {
             form: {
-                username: null,
+                first_name: null,
+                second_name: null,
                 email: null,
                 password: null,
                 password_confirmation: null,
@@ -379,7 +402,11 @@ export default {
     },
     validations: {
         form: {
-            username: {
+            first_name: {
+                required,
+                minLength: minLength(3),
+            },
+            second_name: {
                 required,
                 minLength: minLength(3),
             },
@@ -402,7 +429,6 @@ export default {
     },
     methods: {
         onSubmit() {
-            console.log("submit");
             this.$v.form.$touch();
 
             if (this.$v.form.$anyError) {
@@ -410,12 +436,8 @@ export default {
             }
 
             this.$store.dispatch("auth/register", this.form).then((res) => {
-                console.log(res);
                 this.$router.push("/login");
             });
-
-            // Form submit logic
-            // this.$router.push('/backend/pages/auth/all')
         },
     },
 };

@@ -16324,6 +16324,109 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
  // Vuelidate, for more info and examples you can check out https://github.com/vuelidate/vuelidate
 
 
@@ -16397,7 +16500,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$router.go(-1);
     },
     onSubmit: function onSubmit() {
-      console.log("submit");
       this.$v.form.$touch();
 
       if (this.$v.form.$anyError) {
@@ -16411,11 +16513,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           id: this.$route.params.id,
           data: this.form
         }).then(function (res) {
-          console.log(res);
+          _this.goBack();
         });
-      } // Form submit logic
-      // this.$router.push('/backend/pages/auth/all')
-
+      }
     }
   }
 });
@@ -16430,6 +16530,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -16563,6 +16683,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -16585,7 +16706,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     this.$store.dispatch("user/getUsers");
   },
-  created: function created() {}
+  created: function created() {},
+  methods: {
+    gotoCreatePage: function gotoCreatePage() {
+      this.$router.push("/users/save");
+    }
+  }
 });
 
 /***/ }),
@@ -56230,7 +56356,9 @@ var render = function () {
                         _c("b-col", { attrs: { cols: "8" } }, [
                           _c("div", [
                             _c("h4", { staticClass: "font-w700 mb-2" }, [
-                              _vm._v("Informationen"),
+                              _vm._v(
+                                "\n                                    Informationen\n                                "
+                              ),
                             ]),
                             _vm._v(" "),
                             _c(
@@ -56270,7 +56398,7 @@ var render = function () {
                                               )
                                             },
                                             expression:
-                                              "$v.form.first_name.$model",
+                                              "\n                                                    $v.form.first_name\n                                                        .$model\n                                                ",
                                           },
                                         }),
                                       ],
@@ -56313,7 +56441,7 @@ var render = function () {
                                               )
                                             },
                                             expression:
-                                              "$v.form.second_name.$model",
+                                              "\n                                                    $v.form.second_name\n                                                        .$model\n                                                ",
                                           },
                                         }),
                                       ],
@@ -56363,7 +56491,7 @@ var render = function () {
                                               )
                                             },
                                             expression:
-                                              "$v.form.qualification.$model",
+                                              "\n                                                    $v.form.qualification\n                                                        .$model\n                                                ",
                                           },
                                         }),
                                       ],
@@ -56403,7 +56531,8 @@ var render = function () {
                                                 $$v
                                               )
                                             },
-                                            expression: "$v.form.guard.$model",
+                                            expression:
+                                              "\n                                                    $v.form.guard.$model\n                                                ",
                                           },
                                         }),
                                       ],
@@ -56456,7 +56585,8 @@ var render = function () {
                                                 $$v
                                               )
                                             },
-                                            expression: "$v.form.email.$model",
+                                            expression:
+                                              "\n                                                    $v.form.email.$model\n                                                ",
                                           },
                                         }),
                                       ],
@@ -56498,7 +56628,7 @@ var render = function () {
                                               )
                                             },
                                             expression:
-                                              "$v.form.telephone.$model",
+                                              "\n                                                    $v.form.telephone.$model\n                                                ",
                                           },
                                         }),
                                       ],
@@ -56514,9 +56644,7 @@ var render = function () {
                         ]),
                         _vm._v(" "),
                         _c("b-col", { attrs: { cols: "4" } }, [
-                          _vm._v(
-                            "\n                        asdf\n                    "
-                          ),
+                          _vm._v(" asdf "),
                         ]),
                       ],
                       1
@@ -56524,7 +56652,9 @@ var render = function () {
                     _vm._v(" "),
                     _c("div", [
                       _c("h4", { staticClass: "font-w700 mb-2" }, [
-                        _vm._v("BESCHÄFTIGUNGSVERHÄLTNIS"),
+                        _vm._v(
+                          "\n                            BESCHÄFTIGUNGSVERHÄLTNIS\n                        "
+                        ),
                       ]),
                       _vm._v(" "),
                       _c(
@@ -56604,7 +56734,7 @@ var render = function () {
                                         )
                                       },
                                       expression:
-                                        "$v.form.weekly_work_hour.$model",
+                                        "\n                                            $v.form.weekly_work_hour.$model\n                                        ",
                                     },
                                   }),
                                 ],
@@ -56771,7 +56901,7 @@ var render = function () {
                           _vm._v(" "),
                           _c("b-dropdown-item", { attrs: { href: "#" } }, [
                             _c("span", { staticClass: "drop-button" }, [
-                              _c("i", { staticClass: "fa fa-trash-alt mr-2 " }),
+                              _c("i", { staticClass: "fa fa-trash-alt mr-2" }),
                               _vm._v("Delete"),
                             ]),
                           ]),
@@ -56801,16 +56931,30 @@ var render = function () {
                   }),
               _vm._v(" "),
               _c("h5", { staticClass: "card-title" }, [
-                _vm._v(_vm._s(_vm.user.name)),
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.user.first_name) +
+                    " " +
+                    _vm._s(_vm.user.second_name) +
+                    "\n            "
+                ),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "card-qualification" }, [
-                _vm._v(_vm._s(_vm.user.qualification)),
+              _c("div", { staticClass: "card-qualification mb-5" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(
+                      _vm.user.qualification
+                        ? _vm.user.qualification
+                        : "unbekannt"
+                    ) +
+                    "\n            "
+                ),
               ]),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "d-flex justify-content-between" },
+                { staticClass: "d-flex justify-content-start" },
                 [
                   _c("b-col", { attrs: { cols: "2" } }, [
                     _c("i", {
@@ -56823,9 +56967,9 @@ var render = function () {
                     { staticClass: "card-email", attrs: { cols: "10" } },
                     [
                       _vm._v(
-                        "\n                " +
+                        "\n                    " +
                           _vm._s(_vm.user.email) +
-                          "\n            "
+                          "\n                "
                       ),
                     ]
                   ),
@@ -56951,6 +57095,7 @@ var render = function () {
                                 variant: "primary",
                                 href: "javascript:void(0)",
                               },
+                              on: { click: _vm.gotoCreatePage },
                             },
                             [
                               _c("i", { staticClass: "fa fa-user mr-4" }),
@@ -56988,7 +57133,7 @@ var render = function () {
             )
           : _c(
               "b-row",
-              { staticClass: "text-center justify-content-between" },
+              { staticClass: "text-center justify-content-start" },
               _vm._l(_vm.users.data, function (item, index) {
                 return _c("user-item", { key: index, attrs: { user: item } })
               }),

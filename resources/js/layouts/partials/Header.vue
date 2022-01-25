@@ -6,7 +6,7 @@
             <div class="content-header">
                 <div class="d-flex"></div>
                 <!-- Right Section -->
-                <div class="d-flex align-items-center">
+                <div v-if="user" class="d-flex align-items-center">
                     <!-- User Dropdown -->
                     <b-dropdown
                         size="sm"
@@ -20,13 +20,22 @@
                         <template #button-content>
                             <div class="d-flex align-items-center">
                                 <img
+                                    v-if="user.avatar"
                                     class="rounded-circle"
-                                    src="img/avatars/avatar10.jpg"
+                                    :src="user.avatar"
+                                    alt="Header Avatar"
+                                    style="width: 21px"
+                                />
+                                <img
+                                    v-else
+                                    class="rounded-circle"
+                                    src="/images/default_user_avatar.png"
                                     alt="Header Avatar"
                                     style="width: 21px"
                                 />
                                 <span class="d-none d-sm-inline-block ml-2"
-                                    >John</span
+                                    >{{ user.first_name }}
+                                    {{ user.second_name }}</span
                                 >
                                 <i
                                     class="fa fa-fw fa-angle-down d-none d-sm-inline-block ml-1 mt-1"
@@ -38,19 +47,26 @@
                                 class="p-3 text-center bg-primary-dark rounded-top"
                             >
                                 <img
+                                    v-if="user.avatar"
                                     class="img-avatar img-avatar48 img-avatar-thumb"
-                                    src="img/avatars/avatar10.jpg"
+                                    :src="user.avatar"
+                                    alt="Avatar"
+                                />
+                                <img
+                                    v-else
+                                    class="img-avatar img-avatar48 img-avatar-thumb"
+                                    src="/images/default_user_avatar.png"
                                     alt="Avatar"
                                 />
                                 <p class="mt-2 mb-0 text-white font-w500">
-                                    John Smith
+                                    {{ user.first_name }} {{ user.second_name }}
                                 </p>
                                 <p class="mb-0 text-white-50 font-size-sm">
-                                    Web Developer
+                                    {{ user.qualification }}
                                 </p>
                             </div>
                             <div class="p-2">
-                                <a
+                                <!-- <a
                                     class="dropdown-item d-flex align-items-center justify-content-between"
                                     href="javascript:void(0)"
                                 >
@@ -93,7 +109,7 @@
                                     <span class="font-size-sm font-w500"
                                         >Lock Account</span
                                     >
-                                </router-link>
+                                </router-link> -->
                                 <a
                                     href="javascript:void(0);"
                                     @click="logout"
@@ -109,7 +125,7 @@
                     <!-- END User Dropdown -->
 
                     <!-- Notifications Dropdown -->
-                    <b-dropdown
+                    <!-- <b-dropdown
                         size="sm"
                         variant="dual"
                         class="d-inline-block ml-2"
@@ -190,18 +206,18 @@
                                 </b-button>
                             </div>
                         </li>
-                    </b-dropdown>
+                    </b-dropdown> -->
                     <!-- END Notifications Dropdown -->
 
                     <!-- Toggle Side Overlay -->
-                    <base-layout-modifier
+                    <!-- <base-layout-modifier
                         action="sideOverlayToggle"
                         variant="dual"
                         size="sm"
                         class="ml-2"
                     >
                         <i class="fa fa-fw fa-list-ul fa-flip-horizontal"></i>
-                    </base-layout-modifier>
+                    </base-layout-modifier> -->
                     <!-- END Toggle Side Overlay -->
                 </div>
                 <!-- END Right Section -->
@@ -257,6 +273,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
     name: "BaseHeader",
     props: {
@@ -304,6 +321,11 @@ export default {
                 },
             ],
         };
+    },
+    computed: {
+        ...mapGetters({
+            user: "auth/user",
+        }),
     },
     methods: {
         onSubmit() {

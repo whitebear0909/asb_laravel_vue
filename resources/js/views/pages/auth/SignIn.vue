@@ -8,9 +8,8 @@
                     <b-row class="justify-content-center">
                         <b-col md="6" lg="4" xl="4" class="py-4 login-blur">
                             <!-- Header -->
-                            <div class="text-center mb-4">
-                                <img src="/images/logo-text.png" />
-                                <h4 class="mb-1">Abeiter-Samariter-Bund</h4>
+                            <div class="logo-area text-center mb-4">
+                                <img class="logo-img" src="/images/logo.svg" />
                             </div>
                             <div class="text-center mb-4 welcome-area">
                                 <h1 class="mb-1 welcome-text">Willkommen!</h1>

@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('second_name');
             $table->string('email', 250);
-            $table->string('avatar', 250)->nullable();
+            $table->longText('avatar')->nullable();
             $table->string('telephone', 30)->nullable();
             $table->string('qualification', 250)->nullable();
             $table->string('emp_type', 250)->nullable();

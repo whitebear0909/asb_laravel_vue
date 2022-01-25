@@ -5,30 +5,13 @@ import LayoutSimple from "@/layouts/variations/Simple.vue";
 // Frontend: Landing
 const Landing = () => import("@/views/Landing.vue");
 // Pages: Auth
-const AuthSignIn = () =>
-    import(
-        /* webpackChunkName: "auth-signin3" */ "@/views/pages/auth/SignIn.vue"
-    );
-const AuthSignUp = () =>
-    import(
-        /* webpackChunkName: "auth-signin3" */ "@/views/pages/auth/AuthSignUp.vue"
-    );
-const Dashboard = () =>
-    import(
-        /* webpackChunkName: "pages-dashboard", webpackPrefetch: true */ "@/views/pages/Dashboard.vue"
-    );
-const Calendar = () =>
-    import(
-        /* webpackChunkName: "pages-dashboard", webpackPrefetch: true */ "@/views/plugins/Calendar.vue"
-    );
-const UserList = () =>
-    import(
-        /* webpackChunkName: "pages-dashboard", webpackPrefetch: true */ "@/views/pages/users/UserList.vue"
-    );
-const UserEdit = () =>
-    import(
-        /* webpackChunkName: "pages-dashboard", webpackPrefetch: true */ "@/views/pages/users/UserEdit.vue"
-    );
+const AuthSignIn = () => import("@/views/pages/auth/SignIn.vue");
+const AuthSignUp = () => import("@/views/pages/auth/AuthSignUp.vue");
+
+const Dashboard = () => import("@/views/pages/Dashboard.vue");
+const Calendar = () => import("@/views/plugins/Calendar.vue");
+const UserList = () => import("@/views/pages/users/UserList.vue");
+const UserEdit = () => import("@/views/pages/users/UserEdit.vue");
 export default [
     {
         path: "/",
@@ -86,8 +69,16 @@ export default [
                 },
             },
             {
-                path: "users/:id",
+                path: "users/edit/:id",
                 name: "UserEdit",
+                component: UserEdit,
+                meta: {
+                    activeOnly: true,
+                },
+            },
+            {
+                path: "users/create",
+                name: "UserCreate",
                 component: UserEdit,
                 meta: {
                     activeOnly: true,

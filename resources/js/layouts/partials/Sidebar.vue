@@ -25,8 +25,7 @@
                         OneUI <span class="font-w400">Vue</span>
                     </span> -->
 
-                        <img src="/images/logo.png" />
-                        <p class="">Abeiter-Samariter-Bund</p>
+                        <img class="sidebar-logo-img" src="/images/logo.svg" />
                     </router-link>
                 </div>
 
@@ -35,19 +34,52 @@
             <!-- END Side Header -->
 
             <!-- Sidebar Scrolling -->
-            <simplebar class="js-sidebar-scroll">
+            <!-- <simplebar class="js-sidebar-scroll"> -->
+            <simplebar class="">
                 <!-- Side Navigation -->
                 <div class="content-side">
                     <base-navigation :nodes="navigation"></base-navigation>
                 </div>
                 <!-- END Side Navigation -->
+
+                <div class="profile-bar mt-2">
+                    <div
+                        v-if="user.avatar"
+                        class="imagePreviewWrapper mb-3"
+                        :style="{
+                            'background-image': `url(${user.avatar})`,
+                        }"
+                    ></div>
+                    <div
+                        v-else
+                        class="imagePreviewWrapper mb-3"
+                        :style="{
+                            'background-image': `url('/images/default_user_avatar.png')`,
+                        }"
+                    ></div>
+                    <div class="side-profile-name">
+                        {{ user.first_name }} {{ user.second_name }}
+                    </div>
+                    <div class="side-profile-qualification">
+                        {{ user.qualification }}
+                    </div>
+                </div>
             </simplebar>
             <!-- END Sidebar Scrolling -->
+
+            <div class="contact-bar">
+                <div class="contact-email mb-2">
+                    <i class="fa fa-envelope mr-1"></i>Support kontaktieren
+                </div>
+                <div class="contact-info">
+                    © Yannik Herrmann & Langer and Friends Holding GmbH 2022
+                </div>
+            </div>
         </slot>
     </nav>
     <!-- END Sidebar -->
 </template>
-
+<style scoped lang="scss"></style>
 <script>
 // SimpleBar, for more info and examples you can check out https://github.com/Grsmto/simplebar/tree/master/packages/simplebar-vue
 import simplebar from "simplebar-vue";
@@ -55,10 +87,17 @@ import simplebar from "simplebar-vue";
 // Get navigation data
 import menuList from "@/data/menu";
 
+import { mapGetters } from "vuex";
+
 export default {
     name: "BaseSidebar",
     props: {
         classes: String,
+    },
+    computed: {
+        ...mapGetters({
+            user: "auth/user",
+        }),
     },
     components: {
         simplebar,
@@ -67,6 +106,7 @@ export default {
         return {
             // Get main navigation
             navigation: menuList.main,
+            previewImage: null,
         };
     },
 };

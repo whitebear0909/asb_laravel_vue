@@ -2,10 +2,64 @@
   .content-header {
     height: 8rem;
     .logo-link {
-      p {
-        font-size: 12px;
-        color: black;
+      .sidebar-logo-img {
+        width: 150px;
       }
+    }
+  }
+
+  .nav-main-item{
+    .active {
+      border-right:4px solid #4C5BED;
+      color: #4C5BED;
+      i {
+        color: #4C5BED;
+      }
+    }
+  }
+
+  .profile-bar{
+    padding: 20px;
+
+    .imagePreviewWrapper {
+        width: 100px;
+        height: 100px;
+        display: block;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center center;
+        background-color: #d8d8d8;
+        border-radius: 10px;
+    }
+
+    .side-profile-name {
+      font-size: 16px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .side-profile-qualification {
+      font-size: 14px;
+      color: #8F8F8F;
+    }
+  }
+
+  .contact-bar {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+
+    .contact-email {
+      color: #8F8F8F;
+      font-size: 14px;
+      i {
+        color: #4C5BED;
+      }
+    }
+
+    .contact-info {
+      font-size: 10px;
+      color: black;
     }
   }
 }
