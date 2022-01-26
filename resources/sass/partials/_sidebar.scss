@@ -44,10 +44,9 @@
     }
   }
 
-  .contact-bar {
-    position: absolute;
-    bottom: 20px;
+  .email-bar {
     padding: 10px 20px;
+    margin-bottom:100px;
 
     .contact-email {
       color: #8F8F8F;
@@ -62,4 +61,24 @@
       color: black;
     }
   }
+}
+
+  /* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

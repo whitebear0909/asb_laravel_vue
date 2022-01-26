@@ -12,6 +12,7 @@ const Dashboard = () => import("@/views/pages/Dashboard.vue");
 const Calendar = () => import("@/views/plugins/Calendar.vue");
 const UserList = () => import("@/views/pages/users/UserList.vue");
 const UserEdit = () => import("@/views/pages/users/UserEdit.vue");
+const Services = () => import("@/views/pages/services/index.vue");
 export default [
     {
         path: "/",
@@ -80,6 +81,14 @@ export default [
                 path: "users/create",
                 name: "UserCreate",
                 component: UserEdit,
+                meta: {
+                    activeOnly: true,
+                },
+            },
+            {
+                path: "services",
+                name: "ServiceManagement",
+                component: Services,
                 meta: {
                     activeOnly: true,
                 },

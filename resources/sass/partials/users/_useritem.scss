@@ -1,0 +1,40 @@
+.user-item-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px 20px;
+
+  .setting-drop{
+    position: absolute; 
+    right: 25px; 
+    top: 15px;
+    
+    button {
+      border: none;
+    }
+  }
+
+  .card-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #202020;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .card-qualification {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgb(76, 91, 237);
+    font-size:14px;
+  }
+
+  .card-email {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: black;
+    text-align: left;
+  }
+}

@@ -9,9 +9,10 @@
 
 //partials
 @import 'partials/sidebar';
-@import 'partials/useredit';
-
+@import 'partials/users/useritem';
+@import 'partials/services/guarditem';
 
 //pages
 @import 'pages/login';
-@import 'pages/useritem';
+@import 'pages/useredit';
+@import 'pages/services';

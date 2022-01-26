@@ -34,15 +34,15 @@
             <!-- END Side Header -->
 
             <!-- Sidebar Scrolling -->
-            <!-- <simplebar class="js-sidebar-scroll"> -->
-            <simplebar class="">
+            <!-- <simplebar class=""> -->
+            <simplebar class="js-sidebar-scroll">
                 <!-- Side Navigation -->
                 <div class="content-side">
                     <base-navigation :nodes="navigation"></base-navigation>
                 </div>
                 <!-- END Side Navigation -->
 
-                <div class="profile-bar mt-2">
+                <div v-if="user" class="profile-bar mt-2">
                     <div
                         v-if="user.avatar"
                         class="imagePreviewWrapper mb-3"
@@ -64,17 +64,16 @@
                         {{ user.qualification }}
                     </div>
                 </div>
+                <div class="email-bar mt-2">
+                    <div class="contact-email mb-2">
+                        <i class="fa fa-envelope mr-1"></i>Support kontaktieren
+                    </div>
+                    <div class="contact-info">
+                        © Yannik Herrmann & Langer and Friends Holding GmbH 2022
+                    </div>
+                </div>
             </simplebar>
             <!-- END Sidebar Scrolling -->
-
-            <div class="contact-bar">
-                <div class="contact-email mb-2">
-                    <i class="fa fa-envelope mr-1"></i>Support kontaktieren
-                </div>
-                <div class="contact-info">
-                    © Yannik Herrmann & Langer and Friends Holding GmbH 2022
-                </div>
-            </div>
         </slot>
     </nav>
     <!-- END Sidebar -->

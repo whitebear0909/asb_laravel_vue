@@ -1,0 +1,33 @@
+.guard-item {
+  padding: 10px;
+  cursor: pointer;
+
+  .guard-item-text {
+    color: #ACACAC;
+  }
+
+  .guard-item-btn-edit {
+    display: none;
+  }
+}
+
+.guard-item:hover {
+  background: #f3f3f3;
+  .guard-item-text {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.active{
+  border-left: 3px solid rgb(76, 91, 237);
+
+  .guard-item-text {
+    color: rgb(76, 91, 237);
+    font-weight: bold;
+  }
+
+  .guard-item-btn-edit {
+    display: block !important;
+  }
+}

@@ -7,22 +7,27 @@ export default {
         {
             name: "Dashboard",
             to: "/dashboard",
-            icon: "si si-speedometer",
+            icon: "fa fa-tachometer-alt",
         },
         {
             name: "Kalender",
             to: "/calendar",
-            icon: "si si-speedometer",
+            icon: "fa fa-calendar-minus",
         },
         {
             name: "Archiv",
             to: "/archive",
-            icon: "si si-speedometer",
+            icon: "fa fa-archive",
         },
         {
             name: "Benutzerverwaltung",
             to: "/users",
-            icon: "si si-user",
+            icon: "fa fa-user",
+        },
+        {
+            name: "Diensteverwaltung",
+            to: "/services",
+            icon: "fa fa-cog",
         },
         // {
         //     name: "Page Packs",
